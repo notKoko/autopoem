@@ -45,12 +45,22 @@
             float: left;
             height: 100%;            
         }
+
+        .is-hidden[style] {
+            display: none !important;
+        }
         
 
     </style>
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/howler@2.2.0/dist/howler.min.js"></script> -->
-    <title>Birthday boy</title>
+
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+    crossorigin="anonymous"></script>
+
+    <title>notYero not30</title>
 </head>
 
 <body>
@@ -98,7 +108,7 @@
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;a culinary treat")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;just thinking about it")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I can taste the sweet & sour")
-        lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;feel its complex texture")
+        lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;& feel its complex texture")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brushing the drums of my ears")
         lines2.push(" ")
         lines2.push("I don't know")
@@ -113,7 +123,7 @@
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;& <em>the Indonesian pomelo</em>")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;make of that what you will")
         lines2.push(" ")
-        lines2.push("They also call it")
+        lines2.push("They call it")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;one of the <b>Seven Wonders of Barbados</b>")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>whatever that means</em>")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it sounds about right")
@@ -177,6 +187,8 @@
         strings: lines,
 
         afterComplete: async (step, instance) => {
+            $('#first').find('.ti-cursor').addClass('is-hidden');
+
             new TypeIt('#second', {
                 speed: s,
                 lifeLike: true,
@@ -185,7 +197,7 @@
                 strings: lines2,
 
                 afterComplete: async (step, instance) => {
-                    instance.cursor = false;
+                    $('#second').find('.ti-cursor').addClass('is-hidden');
                     new TypeIt('#third', {
                         speed: s,
                         lifeLike: true,
@@ -194,6 +206,7 @@
                         strings: lines3,
 
                         afterComplete: async (step, instance) => {
+                            $('#third').find('.ti-cursor').addClass('is-hidden');
                             new TypeIt('#fourth', {
                                 speed: s,
                                 lifeLike: true,
@@ -202,6 +215,7 @@
                                 strings: lines4,
 
                                 afterComplete: async (step, instance) => {
+                                    $('#fourth').find('.ti-cursor').addClass('is-hidden');
                                 }
                             }).go();
                         }
