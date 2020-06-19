@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="typing.css">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     
     <style>
@@ -81,7 +80,7 @@
         lines.push("At first I catch myself")    
         lines.push("&nbsp;&nbsp;&nbsp;&nbsp;trying to capture you")
         lines.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in a web of <em>fancy words</em>")
-        lines.push("<b>no thats not right</b>")
+        lines.push("\"nah thats not right\"")
         lines.push(" ")
         lines.push("\"Come on!\"")
         lines.push("I tell myself")
@@ -99,8 +98,8 @@
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;a culinary treat")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;just thinking about it")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I can taste the sweet & sour")
-        lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;as its complex texture")
-        lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brushes the drums in my ears")
+        lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;feel its complex texture")
+        lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brushing the drums of my ears")
         lines2.push(" ")
         lines2.push("I don't know")
         lines2.push("&nbsp;&nbsp;&nbsp;&nbsp;if you like grapefruits yero")
@@ -158,7 +157,7 @@
         lines4.push(" ")
         lines4.push("Goddamn those twenties man")
         lines4.push("&nbsp;&nbsp;&nbsp;&nbsp;I am sure it was hard & real")
-        lines4.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;& sweet & sour & bitter")
+        lines4.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;& sour & bitter & sweet")
         lines4.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;perhaps sometimes")
         lines4.push("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;even a little bloody")
         lines4.push(" ")
@@ -176,27 +175,32 @@
         speed: s,
         lifeLike: true,
         startDelay: 1000,
+        nextStringDelay: 1000,
         strings: lines,
 
         afterComplete: async (step, instance) => {
             new TypeIt('#second', {
                 speed: s,
                 lifeLike: true,
-                startDelay: 1000,
+                startDelay: 2000,
+                nextStringDelay: 1000,
                 strings: lines2,
 
                 afterComplete: async (step, instance) => {
+                    instance.cursor = false;
                     new TypeIt('#third', {
                         speed: s,
                         lifeLike: true,
-                        startDelay: 1000,
+                        startDelay: 2000,
+                        nextStringDelay: 1000,
                         strings: lines3,
 
                         afterComplete: async (step, instance) => {
                             new TypeIt('#fourth', {
                                 speed: s,
                                 lifeLike: true,
-                                startDelay: 1000,
+                                startDelay: 4000,
+                                nextStringDelay: 2000,
                                 strings: lines4,
 
                                 afterComplete: async (step, instance) => {
@@ -207,14 +211,7 @@
                 }
             }).go();
         }
-    }).go();  
-
-       
-
-
-
-
-
+    }).go();      
     </script>
     
 </body>
